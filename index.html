@@ -196,7 +196,7 @@
   let percent = Math.min((currentAmount / goalAmount) * 100, 100);
   fill.style.width = percent + '%';
   fill.textContent = '$' + currentAmount.toLocaleString();
-  label.textContent = `Goal: $${goalAmount.toLocaleString()} (${percent.toFixed(1)}%)`;
+  label.innerHTML = `<strong>Goal: $${goalAmount.toLocaleString()} (${percent.toFixed(1)}%)</strong>`;
 </script>
 
     <div class="project">
