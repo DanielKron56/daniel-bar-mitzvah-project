@@ -5,6 +5,7 @@
   <title>Daniel Krongauz | Bar Mitzvah Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -17,7 +18,7 @@
     header {
       background: linear-gradient(to right, #1e3c72, #2a5298);
       color: white;
-      padding: 60px 20px;
+      padding: 70px 20px;
     }
 
     header h1 {
@@ -27,19 +28,20 @@
 
     header h2 {
       font-weight: 300;
+      margin-bottom: 10px;
     }
 
     section {
       padding: 60px 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
 
     .project {
       background: white;
-      border-radius: 12px;
+      border-radius: 15px;
       padding: 40px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     }
 
     ul {
@@ -49,22 +51,45 @@
     }
 
     ul li {
-      margin: 10px 0;
+      margin: 15px 0;
+    }
+
+    .donate-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 35px;
+      background-color: #2a5298;
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .donate-button:hover {
+      background-color: #1e3c72;
+      transform: scale(1.05);
+    }
+
+    #donate {
+      background: #ffffff;
+      margin-top: 40px;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      padding: 50px 30px;
     }
 
     footer {
       background: #222;
       color: white;
-      padding: 20px;
+      padding: 25px;
       font-size: 0.9em;
-    }
-
-    .highlight {
-      font-weight: 600;
-      color: #2a5298;
+      margin-top: 60px;
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -76,24 +101,41 @@
   <section>
     <div class="project">
       <h2>My Mitzvah Project</h2>
+
       <p>
-        For my Bar Mitzvah, I challenged myself physically and spiritually.
-        Every single day, I committed to building strength, discipline, and Jewish growth.
+        For my Bar Mitzvah, I challenged myself both physically and spiritually.
+        Every single day, I committed to strengthening my body and my Jewish knowledge.
       </p>
 
       <ul>
-        <li>💪 100 Push-Ups</li>
-        <li>🔥 100 Sit-Ups</li>
-        <li>🏋️ 100 Body Squats</li>
-        <li>📖 10 New Hebrew Words</li>
+        <li>💪 100 Push-Ups Daily</li>
+        <li>🔥 100 Sit-Ups Daily</li>
+        <li>🏋️ 100 Body Squats Daily</li>
+        <li>📖 10 New Hebrew Words Daily</li>
       </ul>
 
       <p>
-        This project taught me consistency, responsibility, and perseverance —
-        important values as I become a Bar Mitzvah and take on more responsibility
+        This project helped me build discipline, responsibility, and perseverance —
+        important qualities as I become a Bar Mitzvah and take on more responsibility
         in Jewish life.
       </p>
+
+      <a href="#donate" class="donate-button">
+        ❤️ Donate to Support My Project
+      </a>
     </div>
+  </section>
+
+  <section id="donate">
+    <h2>Support My Project</h2>
+    <p>
+      If you would like to support my mitzvah project, please consider making a donation.
+      Your support means a lot and helps me continue making an impact.
+    </p>
+
+    <a href="PASTE_YOUR_DONATION_LINK_HERE" target="_blank" class="donate-button">
+      Donate Now
+    </a>
   </section>
 
   <footer>
