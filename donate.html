@@ -5,236 +5,98 @@
   <title>Donate | Daniel Krongauz Bar Mitzvah Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font to match main site -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #0a2342 0%, #102f5c 100%);
-      margin: 0;
-      padding: 0;
-    }
-
-    .wrapper {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 560px;
-      background: white;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .header h1 {
-      margin: 0;
-      font-weight: 600;
-      color: #0a2342;
-      font-size: 26px;
-    }
-
-    .header p {
-      margin-top: 8px;
-      color: #555;
-      font-size: 14px;
-    }
-
-    .nonprofit-box {
-      background: #f8fafc;
-      border-radius: 8px;
-      padding: 14px;
-      margin-bottom: 18px;
-      font-size: 13px;
-      color: #444;
-      border: 1px solid #e2e8f0;
-      line-height: 1.5;
-    }
-
-    .project-box {
-      background: #f2f6fc;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-left: 4px solid #0a2342;
-      font-size: 14px;
-    }
-
-    label {
-      display: block;
-      margin-top: 14px;
-      font-weight: 500;
-      font-size: 14px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 11px;
-      margin-top: 6px;
-      border-radius: 6px;
-      border: 1px solid #d0d7e2;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-
-    input:focus, select:focus {
-      outline: none;
-      border-color: #0a2342;
-    }
-
-    .row {
-      display: flex;
-      gap: 10px;
-    }
-
-    .row .col {
-      flex: 1;
-    }
-
-    button {
-      width: 100%;
-      margin-top: 25px;
-      padding: 14px;
-      background: linear-gradient(135deg, #0a2342, #163d73);
-      color: white;
-      font-size: 16px;
-      font-weight: 500;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .back-link {
-      text-align: center;
-      margin-top: 18px;
-    }
-
-    .back-link a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    .back-link a:hover {
-      opacity: 1;
-      text-decoration: underline;
-    }
-
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(180deg, #0a2342 0%, #102f5c 100%); margin: 0; padding: 0; }
+    .wrapper { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .container { width: 100%; max-width: 560px; background: white; padding: 35px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+    .header { text-align: center; margin-bottom: 20px; }
+    .header h1 { margin: 0; font-weight: 600; color: #0a2342; font-size: 26px; }
+    .header p { margin-top: 8px; color: #555; font-size: 14px; }
+    .nonprofit-box { background: #f8fafc; border-radius: 8px; padding: 14px; margin-bottom: 18px; font-size: 13px; color: #444; border: 1px solid #e2e8f0; line-height: 1.5; }
+    .project-box { background: #f2f6fc; border-radius: 8px; padding: 15px; margin-bottom: 20px; border-left: 4px solid #0a2342; font-size: 14px; }
+    label { display: block; margin-top: 14px; font-weight: 500; font-size: 14px; }
+    input, select { width: 100%; padding: 11px; margin-top: 6px; border-radius: 6px; border: 1px solid #d0d7e2; font-family: 'Inter', sans-serif; font-size: 14px; box-sizing: border-box; }
+    input:focus, select:focus { outline: none; border-color: #0a2342; }
+    .row { display: flex; gap: 10px; }
+    .row .col { flex: 1; }
+    button { width: 100%; margin-top: 25px; padding: 14px; background: linear-gradient(135deg, #0a2342, #163d73); color: white; font-size: 16px; font-weight: 500; border: none; border-radius: 8px; cursor: pointer; }
+    button:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .back-link { text-align: center; margin-top: 18px; }
+    .back-link a { color: white; text-decoration: none; font-size: 14px; opacity: 0.9; }
+    .back-link a:hover { opacity: 1; text-decoration: underline; }
   </style>
 </head>
 <body>
 
 <div class="wrapper">
-
   <div>
-
     <div class="container">
-
       <div class="header">
         <h1>Make a Donation</h1>
         <p>Daniel Krongauz Bar Mitzvah Project</p>
       </div>
 
-      <!-- Nonprofit info exactly like AFINS page -->
-      <div class="nonprofit-box">
-        <strong>American Friends of Israel Navy SEALs (AFINS)</strong><br>
-        Registered U.S. 501(c)(3) nonprofit organization supporting veterans of Shayetet 13.<br>
-        Donations are tax-deductible to the extent allowed by law.<br>
-        EIN: 47-1860249
+      <!-- Intro text -->
+      <div class="nonprofit-box" style="margin-bottom:18px;">
+        Israel’s Navy SEALs (Shayetet 13) continue to operate constantly and quietly against threats to the State of Israel both close to home and far beyond Israel’s borders. Please help us meet the needs of the warriors and their families on the battlefront and on the home front.<br><br>
+        To donate by credit card, please complete the below form, click “Donate Securely” and enter credit card info on the next page. For instructions on how to give via check or wire transfer, please see <a href="wire_check.html">here</a>.<br><br>
+        AFINS is a 501(c)(3) nonprofit organization. Tax-ID 20-5916414. All U.S. donations are fully tax-deductible.
       </div>
 
-      <!-- Project designation info -->
+      <!-- Project designation -->
       <div class="project-box">
         <strong>Designation:</strong> Daniel Krongauz Bar Mitzvah Project<br>
         <strong>Beneficiary:</strong> Israel Navy SEALs (Shayetet 13)<br>
         <strong>Contribution Type:</strong> One Time Donation
       </div>
 
-      <!-- ACTUAL FORM POSTS TO LITTLE GREEN LIGHT -->
-      <form method="POST"
-            action="https://secure.lglforms.com/form_engine/s/REPLACE_WITH_REAL_FORM_ID">
-
-        <!-- REQUIRED HIDDEN PARAMETERS -->
-
+      <!-- Donation form -->
+      <form method="POST" action="https://secure.lglforms.com/form_engine/s/FORM_ID">
         <input type="hidden" name="giving_type" value="one_time">
-
-        <input type="hidden" name="designation"
-               value="Daniel Krongauz Bar Mitzvah Project">
-
-        <input type="hidden" name="referral_source"
-               value="Daniel Krongauz Bar Mitzvah Project">
-
-        <!-- Hardcode processing fee checkbox as UNCHECKED -->
+        <input type="hidden" name="designation" value="Daniel Krongauz Bar Mitzvah Project">
+        <input type="hidden" name="referral_source" value="Daniel Krongauz Bar Mitzvah Project">
         <input type="hidden" name="charge_covered" value="false">
 
-        <!-- Donation Amount -->
         <label>Donation Amount (USD) *</label>
         <input type="number" name="amount" required>
 
-        <!-- Name -->
         <div class="row">
           <div class="col">
             <label>First Name *</label>
             <input type="text" name="first_name" required>
           </div>
-
           <div class="col">
             <label>Last Name *</label>
             <input type="text" name="last_name" required>
           </div>
         </div>
 
-        <!-- Email -->
         <label>Email *</label>
         <input type="email" name="email" required>
 
-        <!-- Address fields EXACTLY split like AFINS -->
-
         <label>Address Line 1 *</label>
         <input type="text" name="billing_address_line1" required>
-
         <label>Address Line 2</label>
         <input type="text" name="billing_address_line2">
 
         <div class="row">
-
           <div class="col">
             <label>City *</label>
             <input type="text" name="billing_city" required>
           </div>
-
           <div class="col">
             <label>State *</label>
             <input type="text" name="billing_state" required>
           </div>
-
         </div>
 
         <div class="row">
-
           <div class="col">
             <label>ZIP Code *</label>
             <input type="text" name="billing_zip" required>
           </div>
-
           <div class="col">
             <label>Country *</label>
             <select name="billing_country" required>
@@ -244,21 +106,16 @@
               <option value="GB">United Kingdom</option>
             </select>
           </div>
-
         </div>
 
         <button type="submit">Donate Securely</button>
-
       </form>
-
     </div>
 
     <div class="back-link">
-      <a href="/daniel-bar-mitzvah-project/">← Back to Project Page</a>
+      <a href="https://danielkron56.github.io/daniel-bar-mitzvah-project/">← Back to Project Page</a>
     </div>
-
   </div>
-
 </div>
 
 </body>
