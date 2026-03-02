@@ -5,6 +5,7 @@
   <title>Donate | Daniel Krongauz Bar Mitzvah Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Font to match main site -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -13,7 +14,6 @@
       background: linear-gradient(180deg, #0a2342 0%, #102f5c 100%);
       margin: 0;
       padding: 0;
-      color: #1a1a1a;
     }
 
     .wrapper {
@@ -26,7 +26,7 @@
 
     .container {
       width: 100%;
-      max-width: 540px;
+      max-width: 560px;
       background: white;
       padding: 35px;
       border-radius: 14px;
@@ -58,8 +58,8 @@
       margin-bottom: 18px;
       font-size: 13px;
       color: #444;
-      line-height: 1.5;
       border: 1px solid #e2e8f0;
+      line-height: 1.5;
     }
 
     .project-box {
@@ -78,7 +78,7 @@
       font-size: 14px;
     }
 
-    input, textarea {
+    input, select {
       width: 100%;
       padding: 11px;
       margin-top: 6px;
@@ -86,16 +86,21 @@
       border: 1px solid #d0d7e2;
       font-family: 'Inter', sans-serif;
       font-size: 14px;
+      box-sizing: border-box;
     }
 
-    input:focus, textarea:focus {
+    input:focus, select:focus {
       outline: none;
       border-color: #0a2342;
     }
 
-    .readonly {
-      background-color: #eef2f7;
-      color: #555;
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .row .col {
+      flex: 1;
     }
 
     button {
@@ -148,62 +153,99 @@
         <p>Daniel Krongauz Bar Mitzvah Project</p>
       </div>
 
-      <!-- Nonprofit Information -->
+      <!-- Nonprofit info exactly like AFINS page -->
       <div class="nonprofit-box">
         <strong>American Friends of Israel Navy SEALs (AFINS)</strong><br>
-        AFINS is a U.S. registered 501(c)(3) nonprofit organization supporting veterans of Shayetet 13, Israel's elite Navy SEAL unit.<br><br>
-        Your donation is tax-deductible to the extent allowed by law.<br>
-        EIN: 47-3274706
+        Registered U.S. 501(c)(3) nonprofit organization supporting veterans of Shayetet 13.<br>
+        Donations are tax-deductible to the extent allowed by law.<br>
+        EIN: 47-1860249
       </div>
 
-      <!-- Project Info -->
+      <!-- Project designation info -->
       <div class="project-box">
         <strong>Designation:</strong> Daniel Krongauz Bar Mitzvah Project<br>
-        <strong>Beneficiary:</strong> Israel's Navy SEALs (Shayetet 13)<br>
+        <strong>Beneficiary:</strong> Israel Navy SEALs (Shayetet 13)<br>
         <strong>Contribution Type:</strong> One Time Donation
       </div>
 
-      <!-- FORM POSTS TO AFINS / LGL -->
+      <!-- ACTUAL FORM POSTS TO LITTLE GREEN LIGHT -->
       <form method="POST"
-            action="https://secure.lglforms.com/form_engine/s/YOUR_FORM_ID_HERE">
+            action="https://secure.lglforms.com/form_engine/s/REPLACE_WITH_REAL_FORM_ID">
 
-        <!-- Hardcoded required hidden fields -->
+        <!-- REQUIRED HIDDEN PARAMETERS -->
+
         <input type="hidden" name="giving_type" value="one_time">
-
-        <input type="hidden" name="referral_source"
-               value="Daniel Krongauz Bar Mitzvah Project">
 
         <input type="hidden" name="designation"
                value="Daniel Krongauz Bar Mitzvah Project">
 
-        <!-- Hardcode cover fees unchecked -->
-        <input type="hidden" name="cover_fees" value="no">
+        <input type="hidden" name="referral_source"
+               value="Daniel Krongauz Bar Mitzvah Project">
 
-        <!-- Visible fields -->
+        <!-- Hardcode processing fee checkbox as UNCHECKED -->
+        <input type="hidden" name="charge_covered" value="false">
 
-        <label for="amount">Donation Amount (USD) *</label>
-        <input type="number" id="amount" name="donation_amount" required>
+        <!-- Donation Amount -->
+        <label>Donation Amount (USD) *</label>
+        <input type="number" name="amount" required>
 
-        <label for="firstName">First Name *</label>
-        <input type="text" id="firstName" name="first_name" required>
+        <!-- Name -->
+        <div class="row">
+          <div class="col">
+            <label>First Name *</label>
+            <input type="text" name="first_name" required>
+          </div>
 
-        <label for="lastName">Last Name *</label>
-        <input type="text" id="lastName" name="last_name" required>
+          <div class="col">
+            <label>Last Name *</label>
+            <input type="text" name="last_name" required>
+          </div>
+        </div>
 
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" required>
+        <!-- Email -->
+        <label>Email *</label>
+        <input type="email" name="email" required>
 
-        <label for="address">Address *</label>
-        <textarea id="address" name="address" rows="3" required></textarea>
+        <!-- Address fields EXACTLY split like AFINS -->
 
-        <label for="referral">Referral Source *</label>
-        <input
-          type="text"
-          id="referral"
-          value="Daniel Krongauz Bar Mitzvah Project"
-          class="readonly"
-          readonly
-        >
+        <label>Address Line 1 *</label>
+        <input type="text" name="billing_address_line1" required>
+
+        <label>Address Line 2</label>
+        <input type="text" name="billing_address_line2">
+
+        <div class="row">
+
+          <div class="col">
+            <label>City *</label>
+            <input type="text" name="billing_city" required>
+          </div>
+
+          <div class="col">
+            <label>State *</label>
+            <input type="text" name="billing_state" required>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <label>ZIP Code *</label>
+            <input type="text" name="billing_zip" required>
+          </div>
+
+          <div class="col">
+            <label>Country *</label>
+            <select name="billing_country" required>
+              <option value="US" selected>United States</option>
+              <option value="CA">Canada</option>
+              <option value="IL">Israel</option>
+              <option value="GB">United Kingdom</option>
+            </select>
+          </div>
+
+        </div>
 
         <button type="submit">Donate Securely</button>
 
