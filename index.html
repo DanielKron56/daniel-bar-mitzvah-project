@@ -21,6 +21,13 @@
       padding: 70px 20px;
     }
 
+    header img {
+      width: 180px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid white;
+    }
+
     header h1 {
       font-size: 3em;
       margin-bottom: 10px;
@@ -33,7 +40,7 @@
 
     section {
       padding: 60px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
 
@@ -53,6 +60,19 @@
 
     ul li {
       margin: 15px 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
     .donate-button {
@@ -86,19 +106,16 @@
 <body>
 
   <header>
+    <img src="me.jpg" alt="Daniel Krongauz">
     <h1>Daniel Krongauz</h1>
     <h2>Bar Mitzvah | April 3</h2>
     <p>Celebrated at the Western Wall, Jerusalem</p>
   </header>
 
   <section>
+
     <div class="project">
       <h2>My Personal Growth Challenge</h2>
-
-      <p>
-        For my Bar Mitzvah, I challenged myself both physically and spiritually.
-        Every single day, I committed to strengthening my body and my Jewish knowledge.
-      </p>
 
       <ul>
         <li>💪 100 Push-Ups Daily</li>
@@ -108,44 +125,40 @@
       </ul>
 
       <p>
-        This project helped me build discipline, responsibility, and perseverance —
-        important qualities as I become a Bar Mitzvah and take on more responsibility
-        in Jewish life.
+        This challenge helped me build discipline, responsibility, and perseverance —
+        important qualities as I become a Bar Mitzvah.
       </p>
     </div>
 
     <div class="project">
-      <h2>Supporting AFI & Shayetet 13</h2>
+      <h2>Supporting AFINS & Shayetet 13</h2>
 
       <p>
-        For my Bar Mitzvah project, I chose to support 
-        <strong>American Friends of Israel Navy SEALs (AFI)</strong>, 
-        an organization that supports the brave soldiers of Shayetet 13.
+        For my Bar Mitzvah project, I am supporting American Friends of Israel Navy SEALs (AFINS),
+        which helps provide equipment, training support, and assistance to the brave soldiers
+        of Shayetet 13.
       </p>
 
       <p>
         Shayetet 13 is an elite naval special forces unit in the Israel Defense Forces.
-        These soldiers carry out some of the most challenging and important missions 
-        to protect Israel and its people.
-      </p>
-
-      <p>
-        AFI helps provide essential equipment, training support, and assistance 
-        to soldiers and their families. Through my project, I am raising awareness 
-        and support to help ensure these soldiers have the resources they need.
-      </p>
-
-      <p>
-        Becoming a Bar Mitzvah means taking responsibility and standing up for what 
-        you believe in. Supporting this cause allows me to show gratitude and appreciation 
-        for those who dedicate their lives to protecting others.
+        These soldiers carry out some of the most challenging missions to protect Israel.
       </p>
 
       <a href="PASTE_YOUR_DONATION_LINK_HERE" target="_blank" class="donate-button">
-        ❤️ Donate to Support AFI
+        ❤️ Donate to Support AFINS
       </a>
-
     </div>
+
+    <div class="project">
+      <h2>Shayetet 13 Photo Section</h2>
+
+      <div class="gallery">
+        <img src="shayetet1.jpg" alt="Shayetet 13 Image 1">
+        <img src="shayetet2.jpg" alt="Shayetet 13 Image 2">
+        <img src="shayetet3.jpg" alt="Shayetet 13 Image 3">
+      </div>
+    </div>
+
   </section>
 
   <footer>
