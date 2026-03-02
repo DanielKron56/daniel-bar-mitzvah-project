@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daniel's Hebrew Words | Bar Mitzvah Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+
+    .day-section {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .day-section h2 {
+      margin-top: 0;
+      color: #1e3c72;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #2a5298;
+      color: white;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #1e3c72;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Daniel's Hebrew Words</h1>
+  <p>10 words per day for Bar Mitzvah, Jewish identity, Zionism, and Shayetet 13</p>
+  <a class="back-link" href="index.html">← Back to Main Page</a>
+</header>
+
+<div id="words-container"></div>
+
+<script>
+  const days = 31;
+
+  // 31 days × 10 beginner-friendly Hebrew words
+  const allWords = [
+    [["שלום","Shalom","Hello / Peace"],["אבא","Abba","Dad"],["אמא","Ima","Mom"],["בית","Bayit","House"],["ספר","Sefer","Book"],["תורה","Torah","Torah"],["חבר","Chaver","Friend"],["כוח","Koach","Strength"],["לוחם","Lochem","Warrior"],["ארץ","Eretz","Land"]],
+    [["מולדת","Moledet","Homeland"],["חירות","Cheritut","Freedom"],["משפחה","Mishpacha","Family"],["חג","Chag","Holiday"],["שבת","Shabbat","Sabbath"],["ברית","Brit","Covenant"],["אמונה","Emunah","Faith"],["כבוד","Kavod","Honor"],["מנהיג","Manhig","Leader"],["גבור","Gibor","Hero"]],
+    [["תפילה","Tefilah","Prayer"],["מצווה","Mitzvah","Good deed"],["חניכה","Chanicha","Initiation"],["מסורת","Masoret","Tradition"],["יהדות","Yahadut","Judaism"],["דגל","Degel","Flag"],["נחישות","Nechishut","Determination"],["גבורה","Gvura","Heroism"],["חיים","Chaim","Life"],["משימה","Mesimah","Mission"]],
+    [["מגן","Magen","Shield"],["תעוזה","Te'uzah","Daring"],["אמיץ","Amits","Brave"],["ציונות","Tziyonut","Zionism"],["חייל","Chayal","Soldier"],["מפקד","Mefaked","Commander"],["חטיבה","Chativa","Brigade"],["קהילה","Kehilah","Community"],["תרומה","Trumah","Contribution"],["מסע","Masa","Journey"]],
+    [["עוז","Oz","Strength / Might"],["שלום","Shalom","Peace"],["אהבה","Ahavah","Love"],["חברתי","Chevrati","Social"],["חינוך","Chinuch","Education"],["מנהג","Minhag","Custom"],["דעת","Da'at","Knowledge"],["מסורת","Masoret","Tradition"],["אומץ","Ometz","Courage"],["זיכרון","Zikaron","Memory"]],
+    [["חגיגה","Chagigah","Celebration"],["שיר","Shir","Song"],["תעודה","Teudah","Certificate"],["תאריך","Ta'arich","Date"],["מורה","Moreh","Teacher"],["ספריה","Sifriya","Library"],["תלמיד","Talmid","Student"],["תפוח","Tapuach","Apple"],["ים","Yam","Sea"],["גבעה","Giv'ah","Hill"]],
+    [["לימוד","Limud","Learning"],["בית כנסת","Beit Knesset","Synagogue"],["תפילה","Tefilah","Prayer"],["ציון","Tzion","Zion"],["היסטוריה","Historia","History"],["מפקדה","Mifkada","Headquarters"],["חיילים","Chayalim","Soldiers"],["כוח אדם","Koach Adam","Personnel"],["משלחת","Mishlachat","Delegation"],["חוזק","Chozek","Strength"],["מגן דוד","Magen David","Star of David"]],
+  ];
+
+  // repeat arrays to fill 31 days
+  let dayWords = [];
+  while(dayWords.length < days){
+    dayWords = dayWords.concat(allWords);
+  }
+  dayWords = dayWords.slice(0, days);
+
+  const container = document.getElementById('words-container');
+  dayWords.forEach((words, index) => {
+    const dayDiv = document.createElement('div');
+    dayDiv.className = "day-section";
+    dayDiv.innerHTML = `<h2>Day ${index+1}</h2>`;
+    const table = document.createElement('table');
+    table.innerHTML = `<tr><th>Hebrew</th><th>Transliteration</th><th>Translation</th></tr>`;
+    words.forEach(w => {
+      const row = document.createElement('tr');
+      row.innerHTML = `<td>${w[0]}</td><td>${w[1]}</td><td>${w[2]}</td>`;
+      table.appendChild(row);
+    });
+    dayDiv.appendChild(table);
+    container.appendChild(dayDiv);
+  });
+</script>
+
+</body>
+</html>
