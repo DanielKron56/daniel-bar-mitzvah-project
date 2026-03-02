@@ -130,30 +130,58 @@
       </p>
     </div>
 
-    <div class="project">
-      <h2>Supporting AFINS & Shayetet 13</h2>
+  <div class="project">
+  <h2>Supporting AFINS & Shayetet 13</h2>
 
-      <p>
-        For my Bar Mitzvah project, I am supporting AFINS (American Friends of Israel Navy SEALs),
-        which helps provide equipment, training support, and assistance to the brave soldiers
-        of Shayetet 13.
-      </p>
+  <p>
+    For my Bar Mitzvah project, I am supporting AFINS (American Friends of Israel Navy SEALs),
+    which helps provide equipment, training support, and assistance to the brave soldiers
+    of Shayetet 13.
+  </p>
 
-      <p>
-        Shayetet 13 is an elite naval special forces unit in the Israel Defense Forces.
-        These soldiers carry out some of the most challenging missions to protect Israel.
-      </p>
+  <p>
+    Shayetet 13 is an elite naval special forces unit in the Israel Defense Forces.
+    These soldiers carry out some of the most challenging missions to protect Israel.
+  </p>
 
-      <p>
-        Becoming a Bar Mitzvah means taking responsibility and standing up for what I believe in.
-        Supporting AFINS allows me to show appreciation for those who dedicate their lives
-        to protecting others.
-      </p>
+  <p>
+    Becoming a Bar Mitzvah means taking responsibility and standing up for what I believe in.
+    Supporting AFINS allows me to show appreciation for those who dedicate their lives
+    to protecting others.
+  </p>
 
-      <a href="donate.html" class="donate-button">
-  ❤️ Donate to Support AFINS
-      </a>
+  <p>
+    I am trying to raise <strong>$3,600</strong>. All donations will go to AFINS to support
+    educational scholarships for Navy SEALs after their service.
+  </p>
+
+  <p><strong>Challenge Dates:</strong> March 1 – March 31</p>
+
+  <!-- Thermometer -->
+  <div style="margin: 20px 0; background: #eee; border-radius: 20px; overflow: hidden; height: 30px; width: 100%;">
+    <div id="thermometer-fill" style="height: 100%; width: 0%; background: linear-gradient(to right, #1e3c72, #2a5298); text-align: right; color: white; font-weight: bold; line-height: 30px; padding-right: 10px; border-radius: 20px;">
+      $0
     </div>
+  </div>
+  <p id="thermometer-label" style="text-align: right; font-size: 0.9em; margin-top: 5px;"></p>
+
+  <a href="donate.html" class="donate-button">
+    ❤️ Donate to Support AFINS
+  </a>
+</div>
+
+<script>
+  // Example: dynamically update thermometer
+  const goalAmount = 3600;
+  let currentAmount = 1200; // Replace with your current raised amount or dynamically load later
+  const fill = document.getElementById('thermometer-fill');
+  const label = document.getElementById('thermometer-label');
+
+  let percent = Math.min((currentAmount / goalAmount) * 100, 100);
+  fill.style.width = percent + '%';
+  fill.textContent = '$' + currentAmount.toLocaleString();
+  label.textContent = `Goal: $${goalAmount.toLocaleString()} (${percent.toFixed(1)}%)`;
+</script>
 
     <div class="project">
       <h2>Shayetet 13 Photo Section</h2>
