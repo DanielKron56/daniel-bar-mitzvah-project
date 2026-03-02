@@ -5,7 +5,6 @@
   <title>Donate | Daniel Krongauz Bar Mitzvah Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Match main site typography and clean modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -27,7 +26,7 @@
 
     .container {
       width: 100%;
-      max-width: 520px;
+      max-width: 540px;
       background: white;
       padding: 35px;
       border-radius: 14px;
@@ -36,7 +35,7 @@
 
     .header {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .header h1 {
@@ -50,6 +49,17 @@
       margin-top: 8px;
       color: #555;
       font-size: 14px;
+    }
+
+    .nonprofit-box {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 18px;
+      font-size: 13px;
+      color: #444;
+      line-height: 1.5;
+      border: 1px solid #e2e8f0;
     }
 
     .project-box {
@@ -76,7 +86,6 @@
       border: 1px solid #d0d7e2;
       font-family: 'Inter', sans-serif;
       font-size: 14px;
-      transition: border 0.2s;
     }
 
     input:focus, textarea:focus {
@@ -87,19 +96,6 @@
     .readonly {
       background-color: #eef2f7;
       color: #555;
-    }
-
-    .checkbox-container {
-      margin-top: 18px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14px;
-    }
-
-    .checkbox-container input {
-      width: auto;
-      margin-top: 3px;
     }
 
     button {
@@ -113,7 +109,6 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: transform 0.1s, box-shadow 0.1s;
     }
 
     button:hover {
@@ -153,21 +148,47 @@
         <p>Daniel Krongauz Bar Mitzvah Project</p>
       </div>
 
-      <div class="project-box">
-        <strong>Supporting Israel's Navy SEALs (Shayetet 13)</strong><br>
-        One Time Contribution
+      <!-- Nonprofit Information -->
+      <div class="nonprofit-box">
+        <strong>American Friends of Israel Navy SEALs (AFINS)</strong><br>
+        AFINS is a U.S. registered 501(c)(3) nonprofit organization supporting veterans of Shayetet 13, Israel's elite Navy SEAL unit.<br><br>
+        Your donation is tax-deductible to the extent allowed by law.<br>
+        EIN: 47-3274706
       </div>
 
-      <form>
+      <!-- Project Info -->
+      <div class="project-box">
+        <strong>Designation:</strong> Daniel Krongauz Bar Mitzvah Project<br>
+        <strong>Beneficiary:</strong> Israel's Navy SEALs (Shayetet 13)<br>
+        <strong>Contribution Type:</strong> One Time Donation
+      </div>
+
+      <!-- FORM POSTS TO AFINS / LGL -->
+      <form method="POST"
+            action="https://secure.lglforms.com/form_engine/s/YOUR_FORM_ID_HERE">
+
+        <!-- Hardcoded required hidden fields -->
+        <input type="hidden" name="giving_type" value="one_time">
+
+        <input type="hidden" name="referral_source"
+               value="Daniel Krongauz Bar Mitzvah Project">
+
+        <input type="hidden" name="designation"
+               value="Daniel Krongauz Bar Mitzvah Project">
+
+        <!-- Hardcode cover fees unchecked -->
+        <input type="hidden" name="cover_fees" value="no">
+
+        <!-- Visible fields -->
 
         <label for="amount">Donation Amount (USD) *</label>
-        <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+        <input type="number" id="amount" name="donation_amount" required>
 
         <label for="firstName">First Name *</label>
-        <input type="text" id="firstName" name="firstName" required>
+        <input type="text" id="firstName" name="first_name" required>
 
         <label for="lastName">Last Name *</label>
-        <input type="text" id="lastName" name="lastName" required>
+        <input type="text" id="lastName" name="last_name" required>
 
         <label for="email">Email *</label>
         <input type="email" id="email" name="email" required>
@@ -175,24 +196,16 @@
         <label for="address">Address *</label>
         <textarea id="address" name="address" rows="3" required></textarea>
 
-        <label for="referral">Please share your referral source: *</label>
+        <label for="referral">Referral Source *</label>
         <input
           type="text"
           id="referral"
-          name="referral"
           value="Daniel Krongauz Bar Mitzvah Project"
           class="readonly"
           readonly
         >
 
-        <div class="checkbox-container">
-          <input type="checkbox" id="coverFees" name="coverFees">
-          <label for="coverFees" style="margin:0; font-weight:400;">
-            Add 3% to my total amount to help cover the payment processing fees.
-          </label>
-        </div>
-
-        <button type="submit">Donate</button>
+        <button type="submit">Donate Securely</button>
 
       </form>
 
